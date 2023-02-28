@@ -49,12 +49,13 @@ class Hangman {
    * @param {function} next callback function to be called after a word is reveived from the API.
    */
   start(difficulty, next) {
-    // get word and set it to the class's this.word
-    // clear canvas
-    // draw base
-    // reset this.guesses to empty array
-    // reset this.isOver to false
-    // reset this.didWin to false
+    this.word = word
+    canvas.clear();
+    this.guesses = [];
+    this.Over = false
+    this.didWin = false
+    
+    return drawBase;
   }
 
   /**
