@@ -31,20 +31,7 @@ class Hangman {
     this.guessedLetters.clear();
     this.updateWordDisplay();
   }
-  updateWordDisplay() {
-    const wordDisplay = document.getElementById('word-display');
-    let displayString = '';
-    for (let i = 0; i < this.wordLength; i++) {
-      const letter = this.word[i];
-      if (this.guessedLetters.has(letter)) {
-        displayString += letter;
-      } else {
-        displayString += '_';
-      }
-      displayString += ' ';
-    }
-    wordDisplay.textContent = displayString;
-  }
+  
   /**
    *
    * @param {string} difficulty a difficulty string to be passed to the getRandomWord Function
