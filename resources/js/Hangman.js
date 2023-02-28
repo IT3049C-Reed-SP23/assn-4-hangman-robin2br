@@ -29,7 +29,20 @@ class Hangman {
     this.guessedLetters.clear();
     this.updateWordDisplay();
   }
-
+  updateWordDisplay() {
+    const wordDisplay = document.getElementById('word-display');
+    let displayString = '';
+    for (let i = 0; i < this.wordLength; i++) {
+      const letter = this.word[i];
+      if (this.guessedLetters.has(letter)) {
+        displayString += letter;
+      } else {
+        displayString += '_';
+      }
+      displayString += ' ';
+    }
+    wordDisplay.textContent = displayString;
+  }
   /**
    *
    * @param {string} difficulty a difficulty string to be passed to the getRandomWord Function
@@ -108,15 +121,41 @@ class Hangman {
     this.ctx.fillRect(10, 410, 175, 10); // Base
   }
 
-  drawHead() {}
+  drawHead() {
+    this.ctx.beginPath();
+    this.ctx.arc(250, 100, 40, 0, Math.PI * 2, false);
+    this.ctx.stroke()
+  }
 
-  drawBody() {}
+  drawBody() {
+    this.ctx.fillRect(240, 140, 20, 100);
+  }
 
-  drawLeftArm() {}
+  drawLeftArm() {
+    this.ctx.beginPath();
+    this.ctx.moveTo(240, 170);
+    this.ctx.lineTo(200, 220);
+    this.ctx.stroke();
+  }
 
-  drawRightArm() {}
+  drawRightArm() {
+    this.ctx.beginPath();
+    this.ctx.moveTo(260, 170);
+    this.ctx.lineTo(300, 220);
+    this.ctx.stroke();
+  }
 
-  drawLeftLeg() {}
+  drawLeftLeg() {
+    this.ctx.beginPath();
+    this.ctx.moveTo(240, 240);
+    this.ctx.lineTo(200, 300);
+    this.ctx.stroke();
+  }
 
-  drawRightLeg() {}
+  drawRightLeg() {
+    this.ctx.beginPath();
+    this.ctx.moveTo(260, 240);
+    this.ctx.lineTo(300, 300);
+    this.ctx.stroke();
+  }
 }
