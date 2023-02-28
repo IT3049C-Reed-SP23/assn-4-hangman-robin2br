@@ -6,6 +6,7 @@ class Hangman {
 
     this.canvas = _canvas;
     this.ctx = this.canvas.getContext(`2d`);
+    this.incorrectGuesses = 0;
   }
 
   /**
@@ -17,12 +18,16 @@ class Hangman {
    * The results is a json object that looks like this:
    *    { word: "book" }
    * */
-  getRandomWord(difficulty) {
-    return fetch(
-      `https://hangman-micro-service-bpblrjerwh.now.sh?difficulty=${difficulty}`
-    )
-      .then((r) => r.json())
-      .then((r) => r.word);
+  async getRandomWord(difficulty) {
+    const response = await fetch(
+      `https://it3049c-hangman.fly.dev/?difficulty=${difficulty}`
+    );
+    const data = await response.json();
+    this.word = data.word.toLowerCase();
+    this.wordLength = this.word.length;
+    this.guessesLeft = 6;
+    this.guessedLetters.clear();
+    this.updateWordDisplay();
   }
 
   /**
