@@ -8,22 +8,22 @@ const resultText = document.getElementById("result-text");
 
 //Options values for buttons
 let options = {
-  fruits: [
-    "Apple",
-    "Blueberry",
-    "Mandarin",
-    "Pineapple",
-    "Pomegranate",
-    "Watermelon",
+  easy: [
+    "cat",
+    "fuzzy",
+    "four",
+    "dog",
+    "quick",
+    "money",
   ],
-  animals: ["Hedgehog", "Rhinoceros", "Squirrel", "Panther", "Walrus", "Zebra"],
-  countries: [
-    "India",
-    "Hungary",
-    "Kyrgyzstan",
-    "Switzerland",
-    "Zimbabwe",
-    "Dominica",
+  medium: ["hungary", "filter", "disaster", "panther", "dissolve", "artistry"],
+  hard: [
+    "strawberry",
+    "friendship",
+    "abbreviation",
+    "hippopotamus",
+    "overspecialized",
+    "biomechanically",
   ],
 };
 
