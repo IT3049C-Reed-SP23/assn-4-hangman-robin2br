@@ -20,7 +20,9 @@ class Hangman {
    * */
   async getRandomWord(difficulty) {
     const response = await fetch(
-      `https://it3049c-hangman.fly.dev/?difficulty=${difficulty}`
+      `https://it3049c-hangman.fly.dev/?easy=${difficulty}`
+      `https://it3049c-hangman.fly.dev/?medium=${difficulty}`
+      `https://it3049c-hangman.fly.dev/?hard=${difficulty}`
     );
     const data = await response.json();
     this.word = data.word.toLowerCase();
